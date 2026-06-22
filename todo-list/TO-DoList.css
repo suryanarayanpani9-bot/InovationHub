@@ -1,0 +1,299 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #153677, #4e085f, #0f8b8d, #6a11cb);
+    background-size: 300% 300%;
+    animation: movingGradient 12s ease-in-out infinite;
+    padding: 10px;
+}
+.container::before,
+.container::after{
+    content: "";
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    z-index: 0;
+}
+.container::before{
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.95), transparent),
+        radial-gradient(2px 2px at 120px 80px, rgba(255,255,255,0.85), transparent),
+        radial-gradient(1.5px 1.5px at 200px 160px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 320px 40px, rgba(255,255,255,0.8), transparent);
+    background-size: 360px 220px;
+    animation: starsDrift 32s linear infinite;
+}
+.container::after{
+    background-image:
+        radial-gradient(1.5px 1.5px at 60px 20px, rgba(255,255,255,0.75), transparent),
+        radial-gradient(2px 2px at 180px 120px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1.5px 1.5px at 280px 60px, rgba(255,255,255,0.65), transparent),
+        radial-gradient(2px 2px at 340px 180px, rgba(255,255,255,0.85), transparent);
+    background-size: 420px 260px;
+    animation: starsDrift 52s linear infinite;
+    opacity: 0.8;
+}
+@keyframes movingGradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@keyframes starsDrift{
+    0%{
+        transform: translateX(-12%);
+    }
+    100%{
+        transform: translateX(12%);
+    }
+}
+.title-icon{
+    width: 52px;
+    height: 52px;
+    margin-left: 10px;
+}
+.to-do-app{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+    background: #fff;
+    margin: 80px auto 20px;
+    padding: 36px 28px 34px;
+    border-radius: 14px;
+    box-shadow: 0 18px 36px rgba(7, 18, 51, 0.2);
+}
+.to-do-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    letter-spacing: 0.4px;
+}
+.tagline{
+    color: #5f6b93;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #edeef0;
+    border-radius: 999px;
+    padding: 8px;
+    margin-bottom: 18px;
+}
+#inputBox{
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 14px;
+    font-size: 16px;
+}
+#inputBox::placeholder{
+    color: #8c96b3;
+}
+.row button{
+    border: none;
+    outline: none;
+    background: #ff5945;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+.row button:hover{
+    background: #e14937;
+}
+.row button:active{
+    transform: translateY(1px);
+}
+.bulk-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+#bulkInput{
+    width: 100%;
+    border: 1px solid #d7def3;
+    border-radius: 12px;
+    padding: 10px 12px;
+    resize: vertical;
+    font-size: 14px;
+    color: #1d2a52;
+}
+#bulkInput:focus{
+    outline: 2px solid #dbe4ff;
+    border-color: #98abeb;
+}
+#addManyBtn{
+    align-self: flex-start;
+    border: none;
+    background: #1d2a52;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#addManyBtn:hover{
+    background: #16203f;
+}
+#taskList{
+    list-style: none;
+}
+.task-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f6f7fb;
+    color: #222;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.task-item:hover{
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+.task-item.pop-in{
+    transform: translateY(6px);
+    opacity: 0;
+}
+.task-item.fade-out{
+    transform: translateX(14px);
+    opacity: 0;
+}
+.task-check{
+    width: 22px;
+    height: 22px;
+    border: 2px solid #9aa4c3;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.task-text{
+    flex: 1;
+    font-size: 16px;
+    word-break: break-word;
+}
+.task-item.completed .task-check{
+    background: #18a558;
+    border-color: #18a558;
+}
+.task-item.completed .task-text{
+    color: #7a7a7a;
+    text-decoration: line-through;
+}
+.task-actions{
+    display: flex;
+    gap: 6px;
+}
+.task-btn{
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+.edit-btn{
+    background: #e8ecf7;
+    color: #1d2a52;
+}
+.edit-btn:hover{
+    background: #dbe4ff;
+}
+.delete-btn{
+    background: #ffe7e4;
+    color: #8d2c1f;
+}
+.delete-btn:hover{
+    background: #ffd6d1;
+}
+.filters{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+.filter-btn{
+    border: 1px solid #d7def3;
+    background: #fff;
+    color: #1d2a52;
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.filter-btn.active{
+    background: #1d2a52;
+    color: #fff;
+    border-color: #1d2a52;
+}
+.todo-meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    color: #44507a;
+    font-size: 14px;
+}
+.meta-btn{
+    border: none;
+    background: transparent;
+    color: #304a96;
+    cursor: pointer;
+    font-weight: 600;
+}
+.empty-state{
+    text-align: center;
+    color: #647099;
+    padding: 12px 0;
+}
+@media (max-width: 520px){
+    .to-do-app{
+        margin-top: 44px;
+        padding: 24px 16px 28px;
+    }
+    .row{
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 14px;
+    }
+    .row button{
+        width: 100%;
+    }
+    #addManyBtn{
+        width: 100%;
+    }
+    .to-do-app h2{
+        font-size: 22px;
+    }
+    .todo-meta{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

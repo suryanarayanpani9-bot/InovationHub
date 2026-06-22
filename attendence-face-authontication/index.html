@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Face Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero-panel">
+            <img class="app-logo" src="attendance-face-logo.svg" alt="Attendance Face Authentication logo">
+            <div>
+                <p class="eyebrow">Webdev Project</p>
+                <h1>Attendance Face Authentication</h1>
+                <p class="subtitle">Register a student face, authenticate from webcam, and store attendance locally in the browser.</p>
+            </div>
+            <div class="status-pill" id="modelStatus">Loading models</div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-card">
+                <div class="icon-wrap"><img src="attendance-face-logo.svg" alt=""></div>
+                <h3>Attendance Face Authentication</h3>
+                <p>Webcam-based face detection system that enrolls students, verifies identity, and marks attendance securely.</p>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="camera-panel">
+                <div class="camera-frame">
+                    <video id="video" autoplay muted playsinline></video>
+                    <canvas id="snapshotCanvas"></canvas>
+                    <div class="camera-placeholder" id="cameraPlaceholder">Camera preview</div>
+                </div>
+                <div class="camera-actions">
+                    <button class="primary-btn" id="startCameraBtn" type="button">Start Camera</button>
+                    <button class="ghost-btn" id="captureBtn" type="button" disabled>Capture Face</button>
+                </div>
+                <p class="message" id="cameraMessage">Allow camera access to begin.</p>
+            </div>
+
+            <div class="control-panel">
+                <div class="tabs" role="tablist" aria-label="Attendance actions">
+                    <button class="tab-btn active" id="enrollTab" type="button" aria-selected="true">Enroll</button>
+                    <button class="tab-btn" id="attendanceTab" type="button" aria-selected="false">Attendance</button>
+                </div>
+
+                <form class="form-panel active" id="enrollPanel">
+                    <label for="studentName">Student Name</label>
+                    <input id="studentName" type="text" placeholder="Enter student name" autocomplete="off">
+
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" type="text" placeholder="Enter roll number or ID" autocomplete="off">
+
+                    <button class="primary-btn full-width" id="enrollBtn" type="submit" disabled>Enroll Face</button>
+                </form>
+
+                <div class="form-panel" id="attendancePanel">
+                    <div class="student-summary">
+                        <span>Registered Students</span>
+                        <strong id="studentCount">0</strong>
+                    </div>
+                    <button class="primary-btn full-width" id="markAttendanceBtn" type="button" disabled>Authenticate & Mark</button>
+                    <button class="ghost-btn full-width" id="clearDataBtn" type="button">Clear Demo Data</button>
+                </div>
+
+                <p class="result-text" id="resultText">No face captured yet.</p>
+            </div>
+        </section>
+
+        <section class="records-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Log</p>
+                    <h2>Recent Attendance</h2>
+                </div>
+                <button class="ghost-btn" id="exportBtn" type="button">Export CSV</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Student ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Match</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTable">
+                        <tr>
+                            <td colspan="5">No attendance marked.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

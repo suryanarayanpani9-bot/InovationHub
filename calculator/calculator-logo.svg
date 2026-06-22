@@ -1,0 +1,12 @@
+<svg width='240' height='180' viewBox='0 0 240 180' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <linearGradient id='g2' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop stop-color='#22d3ee' offset='0%'/>
+      <stop stop-color='#0ea5e9' offset='50%'/>
+      <stop stop-color='#f97316' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <rect width='240' height='180' rx='18' fill='url(#g2)'/>
+  <text x='30' y='108' fill='white' font-size='34' font-family='Space Grotesk, Segoe UI' font-weight='700'>Calculator</text>
+  <text x='30' y='138' fill='white' font-size='18' font-family='Segoe UI' font-weight='400'>Glassmorphic</text>
+</svg>

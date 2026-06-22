@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="TO-DoList.css">
+</head>
+<body>
+ <div class=" container">
+    <main class="to-do-app" aria-label="To-Do app">
+        <h2>MY TO-DO LIST <img src="work-order.png" alt="Work order icon" class="title-icon"></h2>
+        <p class="tagline">Plan smarter. Finish faster.</p>
+
+        <form id="taskForm" class="row" autocomplete="off">
+            <input type="text" id="inputBox" placeholder="Add a task" maxlength="120" aria-label="Task input">
+            <button id="addBtn" type="submit">Add Task</button>
+        </form>
+        <section class="bulk-box" aria-label="Bulk add tasks">
+            <textarea id="bulkInput" placeholder="Add many tasks (one per line)" rows="4" maxlength="2000"></textarea>
+            <button id="addManyBtn" type="button">Add Many Tasks</button>
+        </section>
+
+        <ul id="taskList" aria-live="polite"></ul>
+        <div id="todoMeta" class="todo-meta"></div>
+    </main>
+ </div>
+ <script src="To-Do List.js"></script>
+</body>
+</html>

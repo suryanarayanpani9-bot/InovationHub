@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-labelledby="title desc">
+    <title id="title">Attendance Face Authentication logo</title>
+    <desc id="desc">A face scan mark with corner brackets and a verified check badge.</desc>
+    <defs>
+        <linearGradient id="bg" x1="10" y1="8" x2="130" y2="92" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#102a43"/>
+            <stop offset="0.55" stop-color="#0f766e"/>
+            <stop offset="1" stop-color="#f59e0b"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="50%" cy="44%" r="58%">
+            <stop stop-color="#ffffff" stop-opacity="0.34"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    <rect width="140" height="100" rx="14" fill="#0f162b"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#bg)"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#glow)"/>
+    <path d="M29 24h18M29 24v18M111 24H93M111 24v18M29 76V58M29 76h18M111 76H93M111 76V58" fill="none" stroke="#e8fffb" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="70" cy="48" r="23" fill="#e8fffb" opacity="0.96"/>
+    <path d="M54 66c4.3-8.3 10-12.4 16.2-12.4 6.1 0 11.8 4.1 15.8 12.4" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="70" cy="40" r="9.5" fill="#0f766e"/>
+    <path d="M45 49h50" stroke="#66f2ff" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="96" cy="68" r="15" fill="#102a43" stroke="#e8fffb" stroke-width="3"/>
+    <path d="M88.5 68.5l5 5 10-11" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="27" cy="50" r="2" fill="#e8fffb" opacity="0.78"/>
+    <circle cx="113" cy="50" r="2" fill="#e8fffb" opacity="0.78"/>
+</svg>

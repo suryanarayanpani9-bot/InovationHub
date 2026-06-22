@@ -1,0 +1,11 @@
+<svg width='240' height='180' viewBox='0 0 240 180' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <linearGradient id='g3' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop stop-color='#34d399' offset='0%'/>
+      <stop stop-color='#0ea5e9' offset='100%'/>
+    </linearGradient>
+  </defs>
+  <rect width='240' height='180' rx='18' fill='url(#g3)'/>
+  <text x='30' y='105' fill='white' font-size='34' font-family='Segoe UI' font-weight='700'>To-Do</text>
+  <text x='30' y='135' fill='white' font-size='18' font-family='Segoe UI' font-weight='400'>List App</text>
+</svg>
