@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surya Pani | Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolio/portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="hero-glow"></div>
         <nav>
             <div class="logo">
-                <img src="back-ground_image.png" alt="Site logo">
+                <img src="portfolio/back-ground_image.png" alt="Site logo">
             </div>
             <ul class="menu">
                 <li><a href="#home" data-target="home">Home</a></li>
@@ -88,46 +88,46 @@
         <section id="portfolio" class="content-section">
             <h2>Portfolio</h2>
             <div class="portfolio-card">
-                <img class="project-thumb" src="../network-authentication/network-auth-logo.svg" alt="Network Authentication UI logo">
+                <img class="project-thumb" src="network-authentication/network-auth-logo.svg" alt="Network Authentication UI logo">
                 <h3>Network Authentication UI</h3>
                 <p>Login page with username/password inputs, CTA, helper note, and footer branding inspired by enterprise access portals.</p>
                 <p><strong>Tech Used:</strong> HTML, CSS</p>
                 <p><strong>Highlights:</strong> Centered login box, accent colors, helper messaging, and footer credits.</p>
-                <a class="project-link" href="../network-authentication/network-authentication.html">Open project</a>
-                <a class="project-link" href="../network-authentication/network-authentication.css">View styles</a>
+                <a class="project-link" href="network-authentication/network-authentication.html">Open project</a>
+                <a class="project-link" href="network-authentication/network-authentication.css">View styles</a>
             </div>
 
             <div class="portfolio-card">
-                <img class="project-thumb" src="../calculator/calculator-logo.svg" alt="Scientific calculator logo">
+                <img class="project-thumb" src="calculator/calculator-logo.svg" alt="Scientific calculator logo">
                 <h3>Scientific Calculator</h3>
                 <p>Glassmorphic scientific calculator supporting standard operations with a responsive, neon-inspired UI.</p>
                 <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
                 <p><strong>Highlights:</strong> Keyboard-friendly layout, animated background blobs, and clear display panel.</p>
-                <a class="project-link" href="../calculator/mathcalculator.html">Open project</a>
+                <a class="project-link" href="calculator/mathcalculator.html">Open project</a>
             </div>
 
             <div class="portfolio-card">
-                <img class="project-thumb" src="../todo-list/work-order.png" alt="To-Do list app logo">
+                <img class="project-thumb" src="todo-list/work-order.png" alt="To-Do list app logo">
                 <h3>To-Do List App</h3>
                 <p>Task manager that supports single and bulk task entry with live list updates and progress metadata.</p>
                 <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
                 <p><strong>Highlights:</strong> Bulk add textarea, accessible labels, status meta section, and clean card layout.</p>
-                <a class="project-link" href="../todo-list/TO-DoLIst.html">Open project</a>
-                <a class="project-link" href="../todo-list/TO-DoList.css">View styles</a>
+                <a class="project-link" href="todo-list/TO-DoLIst.html">Open project</a>
+                <a class="project-link" href="todo-list/TO-DoList.css">View styles</a>
             </div>
 
             <div class="portfolio-card">
-                <img class="project-thumb" src="../attendence-face-authontication/attendance-face-logo.svg" alt="Attendance Face Authentication logo">
+                <img class="project-thumb" src="attendence-face-authontication/attendance-face-logo.svg" alt="Attendance Face Authentication logo">
                 <h3>Attendance Face Authentication</h3>
                 <p>Webcam-based attendance app that enrolls student faces, authenticates identity, and stores attendance locally.</p>
                 <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
                 <p><strong>Highlights:</strong> Student enrollment, camera capture, attendance log, and CSV export.</p>
-                <a class="project-link" href="../attendence-face-authontication/index.html">Open project</a>
-                <a class="project-link" href="../attendence-face-authontication/style.css">View styles</a>
+                <a class="project-link" href="attendence-face-authontication/index.html">Open project</a>
+                <a class="project-link" href="attendence-face-authontication/style.css">View styles</a>
             </div>
 
             <div class="portfolio-card">
-                <img class="project-thumb" src="../ai-assistant/ai-logo.svg" alt="AI assistant logo">
+                <img class="project-thumb" src="ai-assistant/ai-logo.svg" alt="AI assistant logo">
                 <h3>AI Assistant (Coming Soon)</h3>
                 <p>Placeholder for an AI assistant web experience. Assets will be added once the build is finalized.</p>
                 <p><strong>Status:</strong> In progress</p>
@@ -180,46 +180,6 @@
         </section>
     </main>
 
-    <script>
-        const bars = document.querySelector('.bars');
-        const menu = document.querySelector('.menu');
-        const menuLinks = document.querySelectorAll('.menu a');
-        const sections = document.querySelectorAll('.content-section');
-        const details = document.querySelector('#details');
-
-        function closeMenu() {
-            menu.classList.remove('active');
-        }
-
-        bars.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-
-        menuLinks.forEach((link) => {
-            link.addEventListener('click', (event) => {
-                const targetId = link.getAttribute('data-target');
-                if (!targetId) return;
-                event.preventDefault();
-
-                if (targetId === 'home') {
-                    sections.forEach((section) => section.classList.remove('active'));
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    sections.forEach((section) => {
-                        section.classList.toggle('active', section.id === targetId);
-                    });
-                    details.scrollIntoView({ behavior: 'smooth' });
-                }
-
-                closeMenu();
-            });
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeMenu();
-            }
-        });
-    </script>
+    <script src="portfolio/portfolio.js"></script>
 </body>
 </html>
