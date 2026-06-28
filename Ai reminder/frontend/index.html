@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Personal Reminder Coach</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="ambient-ring ring-1"></div>
+    <div class="ambient-ring ring-2"></div>
+
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">AI Personal Reminder Coach</p>
+          <h1>Stay consistent with a voice-first routine coach.</h1>
+          <p class="subtitle">
+            Add daily tasks, get spoken reminders, and track your streaks in one clean
+            dashboard.
+          </p>
+          <div class="feature-chips">
+            <span class="chip">Voice-first</span>
+            <span class="chip">Hands-free</span>
+            <span class="chip">Local data</span>
+          </div>
+          <div class="hero-footer">
+            <div class="signal">
+              <span class="signal-dot" aria-hidden="true"></span>
+              Voice reminders ready
+            </div>
+            <div class="signal subtle">Streaks auto-calculated</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <span>Total Tasks</span>
+            <strong id="stat-total">0</strong>
+          </div>
+          <div class="stat">
+            <span>Completed Today</span>
+            <strong id="stat-completed">0</strong>
+          </div>
+          <div class="stat">
+            <span>Pending</span>
+            <strong id="stat-pending">0</strong>
+          </div>
+          <div class="stat">
+            <span>Streak</span>
+            <strong id="stat-streak">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <section class="panel compact-panel">
+          <header class="panel-header">
+            <h2>Today&apos;s Tasks</h2>
+            <p class="coach" id="coach-message">Loading your coach...</p>
+          </header>
+          <ul class="task-list" id="task-list"></ul>
+        </section>
+
+        <section class="panel">
+          <header class="panel-header">
+            <h2>New Task</h2>
+            <p class="hint">Set a time and reminder interval to stay on pace.</p>
+          </header>
+          <form id="task-form" class="task-form">
+            <label>
+              Task Name
+              <input type="text" name="title" placeholder="Deep work session" required />
+            </label>
+            <label>
+              Category
+              <input type="text" name="category" placeholder="Study / Workout / Coding" required />
+            </label>
+            <label>
+              Time
+              <input type="time" name="time" required />
+            </label>
+            <label>
+              Reminder Interval (seconds)
+              <input type="number" name="reminder_interval" min="1" value="10" required />
+            </label>
+            <button type="submit">Add Task</button>
+          </form>
+          <div class="voice-card">
+            <div class="voice-header">
+              <h3>Voice Command</h3>
+              <div class="voice-actions">
+                <button class="btn ghost" id="voice-btn" type="button">
+                  <span class="mic-dot" aria-hidden="true"></span>
+                  Start Listening
+                </button>
+                <button class="btn ghost" id="mic-test-btn" type="button">Test Mic</button>
+              </div>
+            </div>
+            <p class="voice-status" id="voice-status">
+              Say: "Add task drink water at 3 pm every 60 seconds".
+            </p>
+            <p class="voice-transcript" id="voice-transcript"></p>
+            <label class="voice-toggle">
+              <input type="checkbox" id="hands-free-toggle" />
+              Hands-free wake word: say "hey jerry"
+            </label>
+            <p class="voice-note">Needs this tab open. First click required by the browser.</p>
+          </div>
+          <div class="voice-settings collapsed" id="voice-settings">
+            <div class="voice-settings-header">
+              <div>
+                <h3>Voice Presets</h3>
+                <p>Preview, switch, and tune voices.</p>
+              </div>
+              <button class="btn ghost voice-tab-btn" id="voice-tab-btn" type="button">
+                Expand
+              </button>
+            </div>
+            <div class="voice-settings-body">
+              <div class="voice-grid" id="voice-grid"></div>
+              <div class="voice-controls">
+                <label>
+                  Language
+                  <select id="voice-language"></select>
+                </label>
+                <div class="tone-group">
+                  <span>Tone</span>
+                  <div class="tone-buttons" id="tone-buttons"></div>
+                </div>
+              </div>
+              <div class="voice-preview">
+                <button class="btn" id="voice-preview-btn" type="button">Preview Voice</button>
+                <button class="btn ghost" id="voice-stop-btn" type="button">Stop</button>
+              </div>
+              <p class="voice-hint">
+                Voice settings apply to reminders and confirmations in this tab.
+              </p>
+              <div class="voice-diagnostics" id="voice-diagnostics">
+                <h4>Voice Diagnostics</h4>
+                <p class="voice-diag-status" id="voice-diag-status">Checking voice availability...</p>
+                <ul class="voice-diag-list" id="voice-diag-list"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <p>
+              Keep this tab open to hear browser voice reminders.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <template id="task-item-template">
+      <li class="task-item">
+        <div class="task-main">
+          <div>
+            <p class="task-title"></p>
+            <p class="task-meta"></p>
+          </div>
+          <span class="task-time"></span>
+        </div>
+        <div class="task-actions">
+          <button class="btn complete">Mark Done</button>
+          <button class="btn edit">Edit</button>
+          <button class="btn ghost delete">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,12 +1,50 @@
-<svg width='240' height='180' viewBox='0 0 240 180' xmlns='http://www.w3.org/2000/svg'>
-  <defs>
-    <linearGradient id='g2' x1='0%' y1='0%' x2='100%' y2='100%'>
-      <stop stop-color='#22d3ee' offset='0%'/>
-      <stop stop-color='#0ea5e9' offset='50%'/>
-      <stop stop-color='#f97316' offset='100%'/>
-    </linearGradient>
-  </defs>
-  <rect width='240' height='180' rx='18' fill='url(#g2)'/>
-  <text x='30' y='108' fill='white' font-size='34' font-family='Space Grotesk, Segoe UI' font-weight='700'>Calculator</text>
-  <text x='30' y='138' fill='white' font-size='18' font-family='Segoe UI' font-weight='400'>Glassmorphic</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-labelledby="title desc">
+    <title id="title">Scientific Calculator logo</title>
+    <desc id="desc">A glass scientific calculator with glowing math controls.</desc>
+    <defs>
+        <linearGradient id="bg" x1="10" y1="8" x2="130" y2="92" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0b1220"/>
+            <stop offset="0.45" stop-color="#164e63"/>
+            <stop offset="1" stop-color="#f97316"/>
+        </linearGradient>
+        <linearGradient id="calc" x1="47" y1="16" x2="94" y2="84" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f8fafc" stop-opacity="0.96"/>
+            <stop offset="0.58" stop-color="#7dd3fc" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#fb923c" stop-opacity="0.9"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="48%" cy="42%" r="62%">
+            <stop stop-color="#ffffff" stop-opacity="0.34"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#020617" flood-opacity="0.35"/>
+        </filter>
+    </defs>
+    <rect width="140" height="100" rx="14" fill="#0f172a"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#bg)"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#glow)"/>
+    <path d="M18 22h28M22 78h23M101 21h20M105 79h17" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round" opacity="0.38"/>
+    <path d="M23 37l9 9 14-19M104 41h17M112.5 32.5v17" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <g filter="url(#softShadow)">
+        <rect x="43" y="15" width="55" height="72" rx="13" fill="url(#calc)" stroke="#ffffff" stroke-width="3"/>
+        <rect x="52" y="25" width="37" height="14" rx="5" fill="#0f172a" opacity="0.88"/>
+        <path d="M57 33h19M82 33h3" stroke="#67e8f9" stroke-width="2.4" stroke-linecap="round"/>
+        <g fill="#0f172a">
+            <circle cx="57" cy="51" r="4.3"/>
+            <circle cx="70.5" cy="51" r="4.3"/>
+            <circle cx="84" cy="51" r="4.3"/>
+            <circle cx="57" cy="64" r="4.3"/>
+            <circle cx="70.5" cy="64" r="4.3"/>
+        </g>
+        <rect x="79.5" y="59.5" width="9" height="18" rx="4.5" fill="#16a34a"/>
+        <path d="M82.5 68.5h3.2" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+    <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 62c4.8-7 11-7 15.5 0" stroke-width="3" opacity="0.82"/>
+        <path d="M29.7 53.5v14" stroke-width="2.6" opacity="0.72"/>
+        <path d="M108 58c7 0 7 13 0 13M108 58h8M108 71h8" stroke-width="2.8" opacity="0.86"/>
+    </g>
+    <circle cx="116" cy="25" r="4" fill="#22d3ee"/>
+    <circle cx="25" cy="24" r="3" fill="#fb923c"/>
+    <circle cx="116" cy="76" r="3" fill="#a7f3d0"/>
 </svg>

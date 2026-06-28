@@ -1,12 +1,60 @@
-<svg width='240' height='180' viewBox='0 0 240 180' xmlns='http://www.w3.org/2000/svg'>
-  <defs>
-    <linearGradient id='g4' x1='0%' y1='0%' x2='100%' y2='100%'>
-      <stop stop-color='#a855f7' offset='0%'/>
-      <stop stop-color='#6366f1' offset='50%'/>
-      <stop stop-color='#06b6d4' offset='100%'/>
-    </linearGradient>
-  </defs>
-  <rect width='240' height='180' rx='18' fill='url(#g4)'/>
-  <text x='30' y='105' fill='white' font-size='32' font-family='Segoe UI' font-weight='700'>AI Assistant</text>
-  <text x='30' y='135' fill='white' font-size='18' font-family='Segoe UI' font-weight='400'>Coming Soon</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-labelledby="title desc">
+    <title id="title">AI Assistant logo</title>
+    <desc id="desc">A futuristic AI assistant core with chat signal, neural nodes, and glowing circuits.</desc>
+    <defs>
+        <linearGradient id="bg" x1="7" y1="8" x2="133" y2="94" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#07111f"/>
+            <stop offset="0.42" stop-color="#4338ca"/>
+            <stop offset="0.72" stop-color="#0891b2"/>
+            <stop offset="1" stop-color="#22c55e"/>
+        </linearGradient>
+        <linearGradient id="core" x1="46" y1="20" x2="95" y2="78" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f8fafc"/>
+            <stop offset="0.45" stop-color="#67e8f9"/>
+            <stop offset="1" stop-color="#c084fc"/>
+        </linearGradient>
+        <radialGradient id="halo" cx="50%" cy="48%" r="58%">
+            <stop stop-color="#ffffff" stop-opacity="0.38"/>
+            <stop offset="0.45" stop-color="#67e8f9" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%">
+            <feDropShadow dx="0" dy="9" stdDeviation="5" flood-color="#020617" flood-opacity="0.4"/>
+        </filter>
+    </defs>
+    <rect width="140" height="100" rx="14" fill="#07111f"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#bg)"/>
+    <rect x="4" y="4" width="132" height="92" rx="12" fill="url(#halo)"/>
+    <path d="M18 29h22M18 50h18M18 71h26M100 29h22M104 50h18M96 71h26" fill="none" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round" opacity="0.36"/>
+    <path d="M38 29l17 12M36 50h17M44 71l12-12M102 29L85 41M104 50H87M96 71L84 59" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.45"/>
+    <g fill="#0f172a" stroke="#dff8ff" stroke-width="2.5">
+        <circle cx="18" cy="29" r="5.5"/>
+        <circle cx="18" cy="50" r="5.5"/>
+        <circle cx="18" cy="71" r="5.5"/>
+        <circle cx="122" cy="29" r="5.5"/>
+        <circle cx="122" cy="50" r="5.5"/>
+        <circle cx="122" cy="71" r="5.5"/>
+    </g>
+    <g filter="url(#shadow)">
+        <path d="M70 16c18.2 0 33 13.1 33 29.3 0 10.4-6.1 19.5-15.4 24.7l1.6 12.6-13-8.1c-2 .3-4.1.5-6.2.5-18.2 0-33-13.1-33-29.7C37 29.1 51.8 16 70 16Z" fill="url(#core)" stroke="#ffffff" stroke-width="3"/>
+        <path d="M55 50c3-8 8-12 15-12s12 4 15 12" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="60" cy="40" r="4" fill="#0f172a"/>
+        <circle cx="80" cy="40" r="4" fill="#0f172a"/>
+        <path d="M58 60h24" stroke="#0f172a" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+        <circle cx="70" cy="51" r="5" fill="#0f172a" opacity="0.92"/>
+        <path d="M70 46v-8M70 56v8M65 51h-8M75 51h8" stroke="#67e8f9" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g fill="#ffffff">
+        <circle cx="18" cy="29" r="2.2"/>
+        <circle cx="18" cy="50" r="2.2"/>
+        <circle cx="18" cy="71" r="2.2"/>
+        <circle cx="122" cy="29" r="2.2"/>
+        <circle cx="122" cy="50" r="2.2"/>
+        <circle cx="122" cy="71" r="2.2"/>
+    </g>
+    <path d="M27 16h14M99 16h14M27 84h14M99 84h14" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round" opacity="0.78"/>
+    <circle cx="37" cy="16" r="3" fill="#22d3ee"/>
+    <circle cx="103" cy="16" r="3" fill="#c084fc"/>
+    <circle cx="37" cy="84" r="3" fill="#34d399"/>
+    <circle cx="103" cy="84" r="3" fill="#f0abfc"/>
 </svg>
